@@ -1,42 +1,57 @@
-.image-carousel {
+.carousel {
+  position: relative;
+  margin-top: 50px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+ 
 }
 
-.image-carousel__content {
+.image-container {
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
-.image-carousel__image {
+.image-container img {
   max-width: 100%;
-  height: 400px; /* set a fixed height for the carousel images */
-  width: 600px; /* set a fixed width for the carousel images */
-  object-fit: cover; /* crop images to fit the dimensions while maintaining aspect ratio */
-  display: block;
-  margin: 0 auto; /* center images within the container */
+  max-height: 100%;
+  object-fit: contain;
 }
 
-.image-carousel__selector {
+
+.controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.selectors {
   position: absolute;
   bottom: 10px;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.image-carousel__circle {
+.selector {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #ccc;
   margin: 0 5px;
   cursor: pointer;
 }
 
-.image-carousel__circle.active {
-  background-color: black;
+.selector.selected {
+  background-color: rgb(3, 3, 3);
 }
 
 .image-carousel__prev,
@@ -44,8 +59,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: white;
-  border: 1px solid black;
+ 
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -57,4 +71,10 @@
 
 .image-carousel__next {
   right: 10px;
+}
+
+.icon {
+  color: #ffffff;
+  font-size: 80px;
+  
 }
