@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.image-carousel {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.image-carousel__content {
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image-carousel__image {
+  max-width: 100%;
+  height: 400px; /* set a fixed height for the carousel images */
+  width: 600px; /* set a fixed width for the carousel images */
+  object-fit: cover; /* crop images to fit the dimensions while maintaining aspect ratio */
+  display: block;
+  margin: 0 auto; /* center images within the container */
+}
+
+.image-carousel__selector {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+
+.image-carousel__circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.image-carousel__circle.active {
+  background-color: black;
+}
+
+.image-carousel__prev,
+.image-carousel__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.image-carousel__prev {
+  left: 10px;
+}
+
+.image-carousel__next {
+  right: 10px;
 }
